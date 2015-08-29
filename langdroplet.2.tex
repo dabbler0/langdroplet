@@ -1,0 +1,617 @@
+
+%% bare_conf.tex
+%% V1.3
+%% 2007/01/11
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.7 or later) with an IEEE conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
+%%                    bare_conf.tex, bare_jrnl.tex, bare_jrnl_compsoc.tex
+%%*************************************************************************
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices can trigger bugs that do  ***
+% *** not appear when using other class files.                            ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+% Note that the a4paper option is mainly intended so that authors in
+% countries using A4 can easily print to A4 and see how their papers will
+% look in print - the typesetting of the document will not typically be
+% affected with changes in paper size (but the bottom and side margins will).
+% Use the testflow package mentioned above to verify correct handling of
+% both paper sizes by the user's LaTeX system.
+%
+% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
+% should be used if it is desired that the figures are to be displayed in
+% draft mode.
+%
+\documentclass[conference]{IEEEtran}
+% Add the compsoc option for Computer Society conferences.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
+% not currently provide for hyperlinked citations.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+\usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+\graphicspath{{./images/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+\DeclareGraphicsExtensions{.jpg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at: 
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found as epslatex.ps or
+% epslatex.pdf at: http://www.ctan.org/tex-archive/info/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage[cmex10]{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics. If using
+% it, be sure to load this package with the cmex10 option to ensure that
+% only type 1 fonts will utilized at all point sizes. Without this option,
+% it is possible that some math symbols, particularly those within
+% footnotes, will be rendered in bitmap form which will result in a
+% document that can not be IEEE Xplore compliant!
+%
+% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
+% There is also a support site at:
+% http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/tools/
+
+
+%\usepackage{mdwmath}
+%\usepackage{mdwtab}
+% Also highly recommended is Mark Wooding's extremely powerful MDW tools,
+% especially mdwmath.sty and mdwtab.sty which are used to format equations
+% and tables, respectively. The MDWtools set is already installed on most
+% LaTeX systems. The lastest version and documentation is available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/mdwtools/
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+%\usepackage{eqparbox}
+% Also of notable interest is Scott Pakin's eqparbox package for creating
+% (automatically sized) equal width boxes - aka "natural width parboxes".
+% Available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/eqparbox/
+
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\usepackage[tight,footnotesize]{subfigure}
+% subfigure.sty was written by Steven Douglas Cochran. This package makes it
+% easy to put subfigures in your figures. e.g., "Figure 1a and 1b". For IEEE
+% work, it is a good idea to load it with the tight package option to reduce
+% the amount of white space around the subfigures. subfigure.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/obsolete/macros/latex/contrib/subfigure/
+% subfigure.sty has been superceeded by subfig.sty.
+
+
+
+%\usepackage[caption=false]{caption}
+%\usepackage[font=footnotesize]{subfig}
+% subfig.sty, also written by Steven Douglas Cochran, is the modern
+% replacement for subfigure.sty. However, subfig.sty requires and
+% automatically loads Axel Sommerfeldt's caption.sty which will override
+% IEEEtran.cls handling of captions and this will result in nonIEEE style
+% figure/table captions. To prevent this problem, be sure and preload
+% caption.sty with its "caption=false" package option. This is will preserve
+% IEEEtran.cls handing of captions. Version 1.3 (2005/06/28) and later 
+% (recommended due to many improvements over 1.2) of subfig.sty supports
+% the caption=false option directly:
+%\usepackage[caption=false,font=footnotesize]{subfig}
+%
+% The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
+% The latest version and documentation of caption.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/caption/
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure. The latest version and documentation can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/base/
+
+
+
+\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
+% Documentation is contained in the stfloats.sty comments as well as in the
+% presfull.pdf file. Do not use the stfloats baselinefloat ability as IEEE
+% does not allow \baselineskip to stretch. Authors submitting work to the
+% IEEE should note that IEEE rarely uses double column equations and
+% that authors should try to avoid such use. Do not be tempted to use the
+% cuted.sty or midfloat.sty packages (also by Sigitas Tolusis) as IEEE does
+% not format its papers in such ways.
+
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/misc/
+% Read the url.sty source comments for usage information. Basically,
+% \url{my_url_here}.
+
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{Dual Block/Text Editing in Many Languages}
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+\author{\IEEEauthorblockN{D. Anthony Bau}
+\IEEEauthorblockA{Phillips Exeter Academy\\
+Exeter, New Hampshire 03833\\
+Email: dbau@exeter.edu}
+}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+% 
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3}, 
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+
+\begin{abstract}
+%\boldmath
+Droplet is new programming editor that can edit arbitrary code in a blocks-based environment. This paper presents Droplet's techniques for parsing and editing a wide variety of languages, including Python, Java, and C. It presents a general framework for adapting Droplet to a new language, and discusses techniques for doing syntax-checking. It also presents a new Droplet input mode, allowing students to type expressions in sockets and turn them into blocks immediately.
+
+\end{abstract}
+% IEEEtran.cls defaults to using nonbold math in the Abstract.
+% This preserves the distinction between vectors and scalars. However,
+% if the conference you are submitting to favors bold math in the abstract,
+% then you can use LaTeX's standard command \boldmath at the very start
+% of the abstract to achieve this. Many IEEE journals/conferences frown on
+% math in the abstract anyway.
+
+% no keywords
+
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+\section{Introduction}
+\begin{figure}[!t]
+\centering
+\includegraphics[width=2.5in]{textgraph.png}
+\caption{Previous findings for the transition between blocks and text with Droplet}
+\label{textgraph}
+\end{figure}
+
+In introductory courses, teachers often see a gap between block languages like Scratch and Blockly and text languages. Block languages give a visual representation of a program and help beginners and "at risk" students \cite{Moskal}. However, students encounter "syntax overload" \cite{Powers} and a lack of confidence \cite{Lewis} when they attempt to transition to text.
+
+Droplet is a new programming editor that edits text programs in a drag-and-drop blocks environment, built to span the gap between blocks to text \cite{Droplet}. Droplet was initially implemented with CoffeeScript and used with Pencilcode, a previously text-based environment, and has been found to help students transition smoothly from blocks to text in CoffeeScript \cite{Droplet}. In classroom experiment, all students started with blocks and the majority of students transitioned voluntarily to text within four days \cite{IDC} (Fig. \ref{textgraph}).
+
+CoffeeScript, however, is a relatively uncommon teaching language. The CSTA 2013 National Secondary School Computer Science Surveys found that the most common text language for high school teaching was Java, followed by BASIC, C++, JavaScript, and Python \cite{CSTA}. A survey by Guo of university courses in 2014 found Python to be the most common teaching language, followed by Java, MATLAB, and C \cite{Guo}. Extending Droplet to these languages would allow blocks to be easily used in courses that currently use text. In this paper presents a framework for quickly extending Droplet to new languages, and applies this framework to create block/text editors for Java, Python, and C.
+
+This paper also introduces Droplet's hybrid input mode, live reparsing, that allows the creation of block expressions in a manner similar to the new Greenfoot 3 frame-based editor \cite{Greenfoot3}.
+
+\section{Related Work}
+
+Tools have been created to help span the gap between blocks and text in individual text languages. BlockEditor is a dual block/text editor that can edit a subset of Java, and has been found to be effective assisting the transition from blocks to Java \cite{Matsuzawa}. Tiled Grace is a block/text editor that can edit Grace programs, and has been found to smooth the transition from blocks to Grace \cite{TiledGrace}. Cheung, et. al. found that BrickLayer, a text-enhanced block language, helped high schoolers transition from blocks to C++ \cite{Cheung}. As far as the author is aware, Droplet is the first work creating a dual-mode block/text editor for Python.
+
+The successful CodeSpells game uses a block language that integrates closely with Java \cite{CodeSpells}. For embedded systems, Flowcode is a visual program editor that integrates closely with C++, and has a feature can help the user learn C++ alongside their Flowcode program \cite{Flowcode}. Previous work has been done to extend Droplet to HTML \cite{Aggarwal}.
+
+Greenfoot 3 requires users to write text for single-line expressions, to make program composition faster and to give users the experience of writing text while interacting with blocks \cite{Greenfoot3}.
+
+\section{Background}
+\subsection{Droplet's Text-First Approach to Blocks}
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=5in]{image11.jpg}
+\caption{Lifecycle of a Droplet Program}
+\label{lifecycle}
+\end{figure*}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=2.5in]{image12.png}
+\caption{Frames of Droplet's Block/Text Animation}
+\label{anim}
+\end{figure}
+
+Droplet was built to bridge the gap between blocks and text. Droplet's primary guiding philosophy is that the text, not the blocks, are the primary data. Thus, Droplet programs begin and end their life as text. When Droplet opens a program file, it runs the program text through a language adapter and inserts markup which indicates where blocks should go and how they should be rendered. The user interacts with this rendering of the program, performing splice operations on the markup stream. During editing, the language mode may be called back to preserve precedence or dictate droppability rules. At the end of the editing session, the markup is simply discarded and a raw text program is generated again. Figure \ref{lifecycle} shows a typical Droplet editing session in JavaScript.
+
+Droplet will always lay out the text in the blocks as it appears in the source text. This is both to follow Droplet's text-first philosophy and to facilitate an animation between blocks and text (Fig. \ref{anim}). This means that Droplet programs are always in a single linear order, unlike Scratch and Blockly. However, Droplet can still take advantage of block languages' two-dimensional composability with "floating stacks" \cite{DropletUpdate}.
+
+\subsection{The Droplet Markup Scheme}
+Droplet has three types of markup entities: Blocks, Sockets, and Indents. Blocks are solid-colored, draggable ranges; Sockets are white, typeable, droppable ranges that can contain single Blocks; Indents are ranges that include multiple Blocks and render their children with interlocking tabs. All three node types can have arbitrary "classes" attached to them, which is simply a list of strings that the language mode assigns at parse time and can re-examine later.
+
+Indents consume whitespace at the beginning of each line; this whitespace is removed from the text stream while editing. This is done so that drags can be interpreted as simple splice operations. The whitespace is reinserted using the Indent metadata when the raw text is regenerated. Each Indent has as metadata a prefix to add to each line; if any lines are misformatted and do not line up with the indent, those lines are flagged as exceptions and handled appropriately when the text is regenerated.
+
+\section{A Generalized Language Framework}
+In our work generalizing Droplet to new languages, we designed a framework for generating Droplet's block-language markup from an arbitrary AST. A new language mode uses a standard parser, like ANTLR (for Java and C++) or Skulpt (for Python), and convert the syntax tree to Droplet's format.
+
+Generating Droplet markup from an abstract syntax tree usually involves a depth-first AST traversal. The Droplet treewalker framework facilitates this. Five types of events can happen when a Droplet treewalker traversal encounters a node:
+\begin{enumerate}
+  \item indent
+  \item paren
+  \item merge
+  \item block/socket
+  \item socket terminal
+\end{enumerate}
+
+A \textbf{merge} event skips the node and proceeds directly to its children without adding a block boundary. If a node has exactly one child, it is automatically skipped regardless of how the mode was configured. An automatically skipped node, however, is recorded, and if a Block is generated, it is flagged as having the node type of all the skipped nodes. This facilitiates automatic rudimentary type-checking, as discussed in the ANTLR adapter section.
+
+A \textbf{socket terminal} event makes a typable socket around a terminal token.
+
+A \textbf{block/socket} event is the basic Droplet event, and is applicable to most AST nodes. Most nodes should become blocks in the output, so a Block is created. However, a Block cannot immediately have a Block parent (when the Block is removed, it must leave behind a Socket), so a Socket must be inserted directly around the Block.
+
+An \textbf{indent} event generates an Indent node in the Droplet markup. Most languages do not have strict whitespace rules, so the indent depth of an Indent can sometimes be ambiguous. Unless other information is available, the indent depth is determined by majority count over all the lines in the range that are not within other Indent children. Indents exclude leading and trailing free text, as this is usually a non-operational marker like "\{" or "\}" that should properly belong to the indent's parent.
+
+The Droplet language framework configuration for Python, which is only 99 lines, can be found on Github \cite{PythonConfig}.
+
+\subsection{ANTLR}
+ANTLR (ANother Tool for Language Recognition) is a parser generator that can generate parsers in JavaScript. Grammars for ANTLR have been written for Java and C++, along with 63 other langauges including BAISC, C\#, Scala, and Haskell \cite{ANTLRGrammars}. The author created a transformer from ANTLR output to Droplet ASTs, allowing languages to be created directly from ANTLR grammars. An example configuration for Java, which is only 81 lines, can be found on Github \cite{JavaConfig}.
+
+\section{Droppability Rules, Precedence, and Parentheses}
+
+\subsection{Droppability}
+One of the primary advantages of block languages is that blocks can only be inserted where they are syntactically correct. In CoffeeScript and JavaScript mode, these rules were implemented by hand. To facilitate easy extension to new languages, Droplet's framework now automatically computes droppability rules from AST node types.
+
+Blocks usually have more than one node type due to the merge treewalk event, and have rendering data associated with the lowest node type. Sockets take on only the highest node type. A Block can be dropped into a Socket if the Socket's node type is any of the Block's types. This strategy ensures that the result will be legal in the grammar. However, it also forbids some combinations that should be legal. For instance, in Figure 9, the "x" socket expects a node with an "expression" type. However, because of the way the C grammar is written, the "2 * 3" block only has types "additiveExpression" and "multiplicativeExpression"; Droplet does not know that "2 * 3" is an "expression", so the drop is forbidden.
+
+These problems can usually be resolved by modifying the source grammar; how to generalize droppability rules for an arbitrary grammar is still an open problem.
+
+\subsection{Precedence and Parentheses}
+\begin{figure*}
+\centering
+\includegraphics[width=5in]{autoparen.png}
+\caption{Example of Droplet's automatic parenthesis insertion}
+\label{autoparen}
+\end{figure*}
+
+\begin{figure}
+\centering
+\includegraphics[width=2.5in]{method_drop.png}
+\caption{Example of Droplet's automatic parenthesis insertion}
+\label{bad_paren}
+\end{figure}
+
+In Droplet's hand-coded modes (CoffeeScript and JavaScript), precedence is handled with metadata on Blocks and Sockets. Each Block is assigned a precedence number based on its node type, and each Socket is assigned a precedence number based on its parent's node type. Whenever a drop occurs, Droplet notifies the language mode, which adds or removes parentheses if necessary. The same callback is also used for semicolons in block statements and commas in array literals; the language mode receives the classes that it assigned at parse time, preceding, and succeeding sibling nodes, and adds or removes delimiters as necessary.
+
+In the modes generated from the new Droplet framework, precedence is handled automatically by reparsing. When a block is placed, the parent block is reparsed. If this reparse changes the block structure, it is assumed that order of operations was broken, and parentheses are inserted (Fig. \ref{autoparen}). This strategy works correctly in all cases except where the user may want the block structure to deliberately change -- for instance, the CoffeeScript drop described in Figure \ref{bad_paren}.
+
+\section{Live Reparsing}
+\begin{figure}
+\centering
+\includegraphics[width=2.5in]{livereparse.png}
+\caption{Example of Droplet's Live Reparsing}
+\label{livereparse}
+\end{figure}
+
+\begin{figure*}
+\centering
+\includegraphics[width=5in]{threeparse.png}
+\caption{Example of Droplet's Three-String Contexts}
+\label{threeparse}
+\end{figure*}
+
+Droplet's contextual parsing also allows for a dual block/text input mode. When users enter reparseable expressions into a socket, Droplet can reparse these expressions into blocks on-the-fly (Fig. \ref{livereparse}). This is similar to Greenfoot 3's frame-based editing, which allows for quicker input of expressions \cite{Greenfoot3}.
+
+If a parser, like ANTLR-generated parsers, exposes arbitrary parsing contexts, live reparsing reparses the closest parent using its node type, which will have been stored in the "classes" flag at parse time.
+
+For parsers that do not expose arbitrary parsing contexts, such as the CoffeeScript or Python parsers, Droplet simulates non-root parsing contexts by assigning a piece of metadata to each Block. This metadata is three strings: a prefix, a suffix, and an indent prefix. When parsing, Droplet concatenates the prefix, input string, and suffix, and parses (fully, so the output is a Droplet markup stream) it at the root context. It then scans forward in the generated markup stream to the end of the prefix. If there is a single Droplet markup entity (Block, Socket, or Indent) that starts at the end of the prefix and ends at the beginning of the suffix, it splices this entity out and uses it as the parse. This process is illustrated in figure \ref{threeparse}.
+
+If the language mode fails to assign an appropriate parsing context, Droplet instead attempts to bubble the reparse up the parents of the nodes until parsing succeeds, ultimately attempting to reparse the entire document. If this fails, Droplet informs the user that they have made a syntax error by highlighting the socket in red.
+
+\section{Results}
+
+Online demos for Droplet's new Java, Python, and C modes can be found online at \cite{JavaExample}, \cite{PythonExample} and \cite{CExample} respectively. Droppability rules for these languages occasionally prevent a drop where a drop should be legal, but the language modes are otherwise fully functional.
+
+\section{Conclusion}
+
+Because Droplet edits text files, Droplet can be used in existing text curricula. This has been demonstrated by Droplet's CoffeeScript mode, which was used in Pencil Codewith a previously text-based curriculum. By supporting more common teaching languages, Droplet can bring the benefits of block languages to more curricula. In the future, Droplet could be extended using the presented framework to support BASIC and MATLAB.
+
+Droplet's hybrid input mode can also help in the transition between blocks and text, allowing students to type some text while still looking at and working with blocks. In future work, this mode could be extended to allow text editing of blocks that have already been parsed.
+
+\clearpage
+
+\begin{thebibliography}{1}
+
+\bibitem{Droplet}
+  Bau, D. A. Droplet, A Blocks-Based Editor for Text Code. Journal of Computer Science in Colleges. 30, 6 (June 2015).
+\bibitem{IDC}
+  David Bau, D. Anthony Bau, Mathew Dawson, and C. Sydney Pickens. 2015. Pencil code: block code for a text world. In Proceedings of the 14th International Conference on Interaction Design and Children (IDC '15). ACM, New York, NY, USA, 445-448. DOI=10.1145/2771839.2771875 http://doi.acm.org/10.1145/2771839.2771875
+\bibitem{Moskal}
+  Moskal B, Lurie D, and Cooper S. Evaluating the Effectiveness of a New Instructional Approach. Proceedings of the 35th SIGCSE Technical Symposium on Computer Science Education.
+\bibitem{TiledGrace}
+  Homer M. Combining Tiled and Textual Views of Code. in 2nd IEEE Working Conference on Software Visualization (Victoria, CA, 2014), IEEE, 1-4.
+\bibitem{Pencilcode}
+  Bau D, Bau D. A. A Preview of Pencil Code. Proceedings of the 2014 ACM Conference on Systems, Programming and Applications. (In press.)
+\bibitem{CSTA}
+  Computer Science Teachers Association. CSTA National Secondary School Computer Science Survey (2013). http://csta.acm.org/Research/sub/Projects/ResearchFiles/CSTASurvey13Results.pdf. Accessed Mar 14, 2015.
+\bibitem{Guo}
+  Guo, P. Python is Now the Most Popular Introductory Teaching Language at Top U.S. Universities. Communications of the ACM blog. http://cacm.acm.org/blogs/blog-cacm/176450-python-is-now-the-most-popular-introductory-teaching-language-at-top-us-universities/fulltext. Accessed Mar 14, 2015.
+\bibitem{Powers}
+  Powers K, Ecott S, Hirshfield L M. 2007. Through the looking glass: teaching CS0 with Alice.SIGCSE Bull. 39, 1 (March 2007), 213-217.
+\bibitem{Lewis}
+  Lewis C M. 2010. How programming environment shapes perception, learning and goals: logo vs. scratch. In Proceedings of the 41st ACM technical symposium on Computer science education.
+\bibitem{Matsuzawa}
+  Yoshiaki Matsuzawa, Takashi Ohata, Manabu Sugiura, and Sanshiro Sakai. 2015. Language Migration in non-CS Introductory Programming through Mutual Language Translation Environment. In Proceedings of the 46th ACM Technical Symposium on Computer Science Education (SIGCSE '15). ACM, New York, NY, USA, 185-190. DOI=10.1145/2676723.2677230 http://doi.acm.org/10.1145/2676723.2677230
+\bibitem{Cheung}
+  Joey C.Y. Cheung, Grace Ngai, Stephen C.F. Chan, and Winnie W.Y. Lau. 2009. Filling the gap in programming instruction: a text-enhanced graphical programming environment for junior high students. In Proceedings of the 40th ACM technical symposium on Computer science education (SIGCSE '09). ACM, New York, NY, USA, 276-280. DOI=10.1145/1508865.1508968 http://doi.acm.org/10.1145/1508865.1508968
+\bibitem{Dann}
+  Wanda Dann, Dennis Cosgrove, Don Slater, Dave Culyba, and Steve Cooper. 2012. Mediated transfer: Alice 3 to Java. In Proceedings of the 43rd ACM technical symposium on Computer Science Education (SIGCSE '12). ACM, New York, NY, USA, 141-146. DOI=10.1145/2157136.2157180 http://doi.acm.org/10.1145/2157136.2157180
+\bibitem{CodeSpells}
+  Sarah Esper, Stephen R. Foster, William G. Griswold, Carlos Herrera, and Wyatt Snyder. 2014. CodeSpells: bridging educational language features with industry-standard languages. In Proceedings of the 14th Koli Calling International Conference on Computing Education Research (Koli Calling '14). ACM, New York, NY, USA, 05-14. DOI=10.1145/2674683.2674684 http://doi.acm.org/10.1145/2674683.2674684
+\bibitem{DropletUpdate}
+  Bau, D.A. Integrating Droplet into Applab: Improving the Usability of a Blocks/Text Editor. Proceedings of the 2015 VLHCC (to appear).
+\bibitem{Greenfoot3}
+  Frame-Based Editing. http://www.greenfoot.org/frames/.
+\bibitem{PythonConfig}
+  http://github.com/dabbler0/droplet/tree/master/src/languages/python.coffee
+\bibitem{ANTLRGrammars}
+  https://github.com/antlr/grammars-v4
+\bibitem{JavaConfig}
+  http://github.com/dabbler0/droplet/tree/master/src/languages/java.coffee
+\bibitem{JavaExample}
+  http://experiment.pencilcode.net/anthony/droplet/example/example-java.html
+\bibitem{PythonExample}
+  http://experiment.pencilcode.net/anthony/droplet/example/example-python.html
+\bibitem{CExample}
+  http://experiment.pencilcode.net/anthony/droplet/example/example-c.html
+
+\end{thebibliography}
+
+% that's all folks
+\end{document}
+
+
